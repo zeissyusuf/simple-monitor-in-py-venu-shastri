@@ -1,24 +1,30 @@
 def check_temp(temperature):
+  ez = True
   if temperature < 0 or temperature > 45:
+    ez= False
     print('Temperature is out of range!')
-    return False
+   return ez
 
 def check_soc(soc):
+  ez = True
   if soc < 20 or soc > 80:
+    ez = False
     print('State of Charge is out of range!')
-    return False
+   return ez
 
 def check_cr(charge_rate):
+  ez = True
   if charge_rate > 0.8:
-    print('Charge rate is out of range! eeeeeeee')
-    return False
+    ez = False
+    print('Charge rate is out of range!')
+   return ez
 
 def battery_is_ok(temperature, soc, charge_rate):
-  check_temp(temperature)
-  check_soc(soc)
-  check_cr(charge_rate)
+  onebool = check_temp(temperature)
+  twobool = check_soc(soc)
+  threebool = check_cr(charge_rate)
 
-  return True
+  return onebool and twobool and threebool
 
 
 if __name__ == '__main__':
