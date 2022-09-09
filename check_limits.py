@@ -1,4 +1,4 @@
-def check_temp(temp):
+def check_temp(temperature):
   if temperature < 0 or temperature > 45:
     print('Temperature is out of range!')
     return False
